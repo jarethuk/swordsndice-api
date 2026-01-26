@@ -1,0 +1,30 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "4TU829QS8N.com.swordsndice",
+          "4TU829QS8N.com.swordsndice.dev"
+        ],
+        "components": [
+          {
+            "/": "*",
+            "comment": "Matches all routes"
+          }
+        ]
+      }
+    ]
+  },
+  "activitycontinuation": {
+    "apps": [
+      "4TU829QS8N.com.swordsndice".
+      "4TU829QS8N.com.swordsndice.dev"
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "4TU829QS8N.com.swordsndice",
+      "4TU829QS8N.com.swordsndice.dev",
+    ]
+  }
+}

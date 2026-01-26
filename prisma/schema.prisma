@@ -1,0 +1,149 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model User {
+  id            String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  lastLogin     DateTime
+  username      String?       @unique
+  email         String        @unique
+  image         String?
+  lists         List[]
+  createdGames  Game[]
+  games         GameMember[]
+  friends       Friend[]      @relation("user")
+  followingMe   Friend[]      @relation("friend")
+  groups        GroupMember[]
+  createdGroups Group[]
+  groupInvites  GroupInvite[] @relation("invites")
+  invitesSent   GroupInvite[] @relation("invitesSent")
+  gameInvites   GameInvite[]  @relation("gameInvite")
+  gameInvitees  GameInvite[]  @relation("gameInvitee")
+  description   String?
+}
+
+model UserLogin {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  createdAt DateTime @default(now())
+  email     String
+  code      String
+}
+
+model List {
+  id           String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  userId       String   @db.Uuid
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name         String
+  game         String
+  army         String
+  points       Int
+  actualPoints Int
+  image        String?
+  description  String?
+  isDeleted    Boolean  @default(false)
+  groups       Json
+}
+
+model Game {
+  id              String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+  createdByUserId String       @db.Uuid
+  createdBy       User         @relation(fields: [createdByUserId], references: [id], onDelete: Cascade)
+  inviteCode      String
+  game            String
+  points          Int
+  image           String?
+  description     String?
+  isStarted       Boolean      @default(false)
+  isComplete      Boolean      @default(false)
+  members         GameMember[]
+  invites         GameInvite[] @relation("gameInvite")
+}
+
+model GameMember {
+  id                  String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  gameId              String   @db.Uuid
+  game                Game     @relation(fields: [gameId], references: [id], onDelete: Cascade)
+  userId              String   @db.Uuid
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  list                Json?
+  isAdmin             Boolean  @default(false)
+  points              Int      @default(0)
+  isWinner            Boolean  @default(false)
+  modelCount          Int      @default(0)
+  modelCountRemaining Int      @default(0)
+}
+
+model GameInvite {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  createdByUserId String   @db.Uuid
+  createdBy       User     @relation(fields: [createdByUserId], references: [id], onDelete: Cascade, name: "gameInvitee")
+  gameId          String   @db.Uuid
+  game            Game     @relation(fields: [gameId], references: [id], onDelete: Cascade, name: "gameInvite")
+  userId          String   @db.Uuid
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade, name: "gameInvite")
+}
+
+model Friend {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  createdAt DateTime @default(now())
+  userId    String   @db.Uuid
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade, name: "user")
+  friendId  String   @db.Uuid
+  friend    User     @relation(fields: [friendId], references: [id], onDelete: Cascade, name: "friend")
+}
+
+model Group {
+  id               String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  createdByUserId  String        @db.Uuid
+  createdBy        User          @relation(fields: [createdByUserId], references: [id], onDelete: Cascade)
+  name             String
+  image            String?
+  description      String?
+  isPublic         Boolean       @default(false)
+  isDeleted        Boolean       @default(false)
+  members          GroupMember[]
+  invites          GroupInvite[]
+  membersCanInvite Boolean       @default(true)
+}
+
+model GroupMember {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  groupId   String   @db.Uuid
+  group     Group    @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  userId    String   @db.Uuid
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  isAdmin   Boolean  @default(false)
+}
+
+model GroupInvite {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  createdByUserId String   @db.Uuid
+  createdBy       User     @relation(fields: [createdByUserId], references: [id], onDelete: Cascade, name: "invitesSent")
+  groupId         String   @db.Uuid
+  group           Group    @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  userId          String   @db.Uuid
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade, name: "invites")
+}

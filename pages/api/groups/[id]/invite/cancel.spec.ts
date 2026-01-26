@@ -1,0 +1,64 @@
+import type {GroupEntity, UserEntity} from '../../../../../datastores/entities';
+import handler from './cancel.page';
+import {NextTestHelper} from '../../../../../modules';
+import {TestRecordHelpers} from '../../../../../helpers';
+import {v4 as uuid} from 'uuid';
+
+describe('/groups/[id]/invite/cancel', () => {
+	const url = '/api/groups/[id]/invite/cancel';
+
+	const test = new NextTestHelper();
+	let testRecordHelpers: TestRecordHelpers;
+	let user: UserEntity;
+	let friend: UserEntity;
+	let group: GroupEntity;
+
+	beforeAll(async () => {
+		const context = await test.initialise(url);
+		testRecordHelpers = new TestRecordHelpers(context);
+	});
+
+	afterAll(async () => {
+		await test.end();
+	});
+
+	beforeEach(async () => {
+		user = await testRecordHelpers.createUser();
+		friend = await testRecordHelpers.createUser();
+		group = await testRecordHelpers.createGroup(user.id);
+	});
+
+	describe('PATCH /', () => {
+		test.checkAuthorised({
+			handler,
+			url,
+			method: 'PATCH',
+			parameters: { id: uuid() },
+			data: {
+				friendId: uuid(),
+			},
+		});
+
+		it('Should delete the invite', async () => {
+			await testRecordHelpers.createGroupInvite(friend.id, group.id, user.id);
+
+			const { body } = await test.patch({
+				handler,
+				url,
+				user,
+				parameters: { id: group.id },
+				data: {
+					friendId: friend.id,
+				},
+			});
+
+			expect(body).toBeTruthy();
+
+			const result = await test.database.groupInvite.findFirst({
+				where: { groupId: group.id, userId: friend.id },
+			});
+
+			expect(result).toBeNull();
+		});
+	});
+});
