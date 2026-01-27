@@ -4,3 +4,6 @@ node_modules
 .env
 
 coverage/
+jest-html-reporters-attach
+junit.xml
+jest_html_reporters.html

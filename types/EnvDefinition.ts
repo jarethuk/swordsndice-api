@@ -1,13 +1,8 @@
 /* istanbul ignore file */
 import 'reflect-metadata';
-import { Expose, Type } from 'class-transformer';
-import { transformAndValidateSync } from 'class-transformer-validator';
-import {
-	IsNotEmpty,
-	IsOptional,
-	IsString,
-	ValidateNested,
-} from 'class-validator'; // class DatabaseEnv {
+import {Expose, Type} from 'class-transformer';
+import {transformAndValidateSync} from 'class-transformer-validator';
+import {IsNotEmpty, IsOptional, IsString, ValidateNested,} from 'class-validator'; // class DatabaseEnv {
 
 class DatabaseEnv {
 	@IsString()
@@ -33,6 +28,28 @@ class EmailEnv {
 	password?: string;
 }
 
+class GoogleEnv {
+	@IsString()
+	@IsOptional()
+	@Expose()
+	webClientId?: string;
+
+	@IsString()
+	@IsOptional()
+	@Expose()
+	webSecret?: string;
+
+	@IsString()
+	@IsOptional()
+	@Expose()
+	webRedirectUrl?: string;
+
+	@IsString()
+	@IsOptional()
+	@Expose()
+	iosClientId?: string;
+}
+
 export class EnvDefinition {
 	@IsString()
 	@Expose()
@@ -47,6 +64,11 @@ export class EnvDefinition {
 	@Type(() => EmailEnv)
 	@Expose()
 	public email!: EmailEnv;
+
+	@ValidateNested()
+	@Type(() => GoogleEnv)
+	@Expose()
+	public google!: GoogleEnv;
 }
 
 const getOrError = (key: string): string => {
@@ -70,6 +92,12 @@ export const Env = () => {
 		email: {
 			user: process.env.EMAIL_USER,
 			password: process.env.EMAIL_PASSWORD,
+		},
+		google: {
+			webClientId: process.env.GOOGLE_WEB_CLIENT_ID,
+			webSecret: process.env.GOOGLE_WEB_SECRET,
+			iosClientId: process.env.GOOGLE_IOS_CLIENT_ID,
+			webRedirectUrl: process.env.GOOGLE_WEB_REDIRECT_URL,
 		},
 	} as EnvDefinition;
 
