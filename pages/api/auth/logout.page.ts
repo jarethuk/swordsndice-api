@@ -1,6 +1,6 @@
 /* istanbul ignore file */
-import {getIronSession} from 'iron-session';
-import {APIHelper, ironOptions, type SessionData} from '../../../modules';
+import { getIronSession } from 'iron-session';
+import { APIHelper, type SessionData, ironOptions } from '../../../modules';
 
 const router = APIHelper.getRouter();
 

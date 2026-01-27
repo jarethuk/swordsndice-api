@@ -1,6 +1,6 @@
-import {GroupDatastore} from '../../../datastores/GroupDatastore.ts';
-import {APIHelper, ValidationHelpers} from '../../../modules';
-import {UserGroupInvite} from '../../../types/responses/UserGroupInvite.ts';
+import { GroupDatastore } from '../../../datastores/GroupDatastore.ts';
+import { APIHelper, ValidationHelpers } from '../../../modules';
+import { UserGroupInvite } from '../../../types/responses/UserGroupInvite.ts';
 
 const router = APIHelper.getRouter({
 	authenticate: true,

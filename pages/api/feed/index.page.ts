@@ -1,6 +1,6 @@
-import {FeedDatastore} from '../../../datastores/FeedDatastore.ts';
-import {APIHelper, ValidationHelpers} from '../../../modules';
-import {FeedItem} from '../../../types/responses/FeedItem.ts';
+import { FeedDatastore } from '../../../datastores/FeedDatastore.ts';
+import { APIHelper, ValidationHelpers } from '../../../modules';
+import { FeedItem } from '../../../types/responses/FeedItem.ts';
 
 const router = APIHelper.getRouter({
 	authenticate: true,

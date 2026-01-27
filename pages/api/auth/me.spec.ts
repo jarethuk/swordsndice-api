@@ -1,7 +1,7 @@
-import type {UserEntity} from '../../../datastores/entities/UserEntity';
-import {TestRecordHelpers} from '../../../helpers/TestRecordHelpers';
-import {NextTestHelper} from '../../../modules/NextTestHelper';
-import type {UserResponse} from '../../../types/responses/UserResponse';
+import type { UserEntity } from '../../../datastores/entities/UserEntity';
+import { TestRecordHelpers } from '../../../helpers/TestRecordHelpers';
+import { NextTestHelper } from '../../../modules/NextTestHelper';
+import type { UserResponse } from '../../../types/responses/UserResponse';
 import handler from './me.page';
 
 describe('/auth/me', () => {

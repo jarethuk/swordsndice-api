@@ -1,9 +1,9 @@
-import type {GroupEntity, UserEntity} from '../../../datastores/entities';
-import {TestRecordHelpers} from '../../../helpers';
-import {NextTestHelper} from '../../../modules';
-import type {UserGroup} from '../../../types/responses/UserGroup.ts';
+import type { GroupEntity, UserEntity } from '../../../datastores/entities';
+import { TestRecordHelpers } from '../../../helpers';
+import { NextTestHelper } from '../../../modules';
+import type { CreateGroupRequest } from '../../../types/requests/CreateGroupRequest.ts';
+import type { UserGroup } from '../../../types/responses/UserGroup.ts';
 import handler from './index.page';
-import type {CreateGroupRequest} from '../../../types/requests/CreateGroupRequest.ts';
 
 describe('/groups', () => {
 	const url = '/api/groups';

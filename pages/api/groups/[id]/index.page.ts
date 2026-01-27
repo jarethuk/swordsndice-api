@@ -1,10 +1,10 @@
-import {Expose} from 'class-transformer';
-import {IsUUID} from 'class-validator';
-import {GroupDatastore} from '../../../../datastores/GroupDatastore.ts';
-import {APIHelper, ValidationHelpers} from '../../../../modules';
-import {UpdateGroupRequest} from '../../../../types/requests/UpdateGroupRequest.ts';
-import {BasicResponse} from '../../../../types/responses/BasicResponse.ts';
-import {GroupResponse} from '../../../../types/responses/GroupResponse.ts';
+import { Expose } from 'class-transformer';
+import { IsUUID } from 'class-validator';
+import { GroupDatastore } from '../../../../datastores/GroupDatastore.ts';
+import { APIHelper, ValidationHelpers } from '../../../../modules';
+import { UpdateGroupRequest } from '../../../../types/requests/UpdateGroupRequest.ts';
+import { BasicResponse } from '../../../../types/responses/BasicResponse.ts';
+import { GroupResponse } from '../../../../types/responses/GroupResponse.ts';
 
 class Query {
 	@IsUUID()

@@ -1,6 +1,6 @@
 /* istanbul ignore file */
-import {Expose} from 'class-transformer';
-import {IsBoolean, IsNotEmpty, IsOptional, IsString} from 'class-validator';
+import { Expose } from 'class-transformer';
+import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class PublicUser {
 	@Expose()

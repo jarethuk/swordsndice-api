@@ -1,7 +1,7 @@
-import {APIHelper} from '../../../modules/APIHelper';
-import {UserDatastore} from '../../../datastores/UserDatastore';
-import {ValidationHelpers} from '../../../modules/ValidationHelpers';
-import {UserResponse} from '../../../types/responses/UserResponse';
+import { UserDatastore } from '../../../datastores/UserDatastore';
+import { APIHelper } from '../../../modules/APIHelper';
+import { ValidationHelpers } from '../../../modules/ValidationHelpers';
+import { UserResponse } from '../../../types/responses/UserResponse';
 
 const router = APIHelper.getRouter();
 

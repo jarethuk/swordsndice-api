@@ -1,9 +1,9 @@
-import {WithContext} from '../modules';
-import type {ListBody} from '../types/ListBody.ts';
-import type {GameInviteResponse} from '../types/responses/GameInviteResponse.ts';
-import type {GameListResponse} from '../types/responses/GameListResponse.ts';
-import type {GameResponse} from '../types/responses/GameResponse.ts';
-import type {PublicUser} from '../types/responses/PublicUser.ts';
+import { WithContext } from '../modules';
+import type { ListBody } from '../types/ListBody.ts';
+import type { GameInviteResponse } from '../types/responses/GameInviteResponse.ts';
+import type { GameListResponse } from '../types/responses/GameListResponse.ts';
+import type { GameResponse } from '../types/responses/GameResponse.ts';
+import type { PublicUser } from '../types/responses/PublicUser.ts';
 
 export interface CreateGameProps {
 	game: string;

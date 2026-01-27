@@ -1,6 +1,6 @@
-import type {GroupEntity, UserEntity} from '../../../datastores/entities';
-import {TestRecordHelpers} from '../../../helpers';
-import {NextTestHelper} from '../../../modules';
+import type { GroupEntity, UserEntity } from '../../../datastores/entities';
+import { TestRecordHelpers } from '../../../helpers';
+import { NextTestHelper } from '../../../modules';
 import handler from './index.page';
 
 describe('/user', () => {

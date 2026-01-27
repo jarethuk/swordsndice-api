@@ -1,6 +1,6 @@
-import type {BaseEntity} from './BaseEntity';
-import type {GroupInviteEntity} from './GroupInviteEntity';
-import type {GroupMemberEntity} from './GroupMemberEntity';
+import type { BaseEntity } from './BaseEntity';
+import type { GroupInviteEntity } from './GroupInviteEntity';
+import type { GroupMemberEntity } from './GroupMemberEntity';
 
 export interface GroupEntity extends BaseEntity {
 	createdByUserId: string;

@@ -1,11 +1,11 @@
 /* istanbul ignore file */
-import type {Server} from 'node:http';
+import type { Server } from 'node:http';
 import * as http from 'node:http';
-import {apiResolver} from 'next/dist/server/api-utils/node/api-resolver';
+import { apiResolver } from 'next/dist/server/api-utils/node/api-resolver';
 import supertest from 'supertest';
-import type {UserEntity} from '../datastores/entities/UserEntity';
-import {TestFramework} from '../helpers/TestFramework';
-import {APIHelper} from './APIHelper';
+import type { UserEntity } from '../datastores/entities/UserEntity';
+import { TestFramework } from '../helpers/TestFramework';
+import { APIHelper } from './APIHelper';
 
 interface RequestOptions {
 	parameters?: any;

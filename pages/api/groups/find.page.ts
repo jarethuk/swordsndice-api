@@ -1,8 +1,8 @@
-import {Expose, Type} from 'class-transformer';
-import {IsNumber, IsOptional, IsString} from 'class-validator';
-import {GroupDatastore} from '../../../datastores/GroupDatastore.ts';
-import {APIHelper, ValidationHelpers} from '../../../modules';
-import {GroupSearchResult} from '../../../types/responses/GroupSearchResult.ts';
+import { Expose, Type } from 'class-transformer';
+import { IsNumber, IsOptional, IsString } from 'class-validator';
+import { GroupDatastore } from '../../../datastores/GroupDatastore.ts';
+import { APIHelper, ValidationHelpers } from '../../../modules';
+import { GroupSearchResult } from '../../../types/responses/GroupSearchResult.ts';
 
 class Query {
 	@IsString()

@@ -1,14 +1,14 @@
-import {v4 as uuid} from 'uuid';
-import type {CreateGroupProps} from '../datastores/GroupDatastore';
+import { v4 as uuid } from 'uuid';
+import type { CreateGroupProps } from '../datastores/GroupDatastore';
 import type {
-    GameEntity,
-    GameMemberEntity,
-    GroupEntity,
-    ListEntity,
-    UserEntity,
-    UserLoginEntity,
+	GameEntity,
+	GameMemberEntity,
+	GroupEntity,
+	ListEntity,
+	UserEntity,
+	UserLoginEntity,
 } from '../datastores/entities';
-import {WithContext} from '../modules/WithContext.ts';
+import { WithContext } from '../modules/WithContext.ts';
 
 export class TestRecordHelpers extends WithContext {
 	public async createUser(

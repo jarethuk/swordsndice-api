@@ -1,6 +1,6 @@
-import {FriendDatastore} from '../../../datastores/FriendDatastore.ts';
-import {APIHelper, ValidationHelpers} from '../../../modules';
-import {PublicUser} from '../../../types/responses/PublicUser.ts';
+import { FriendDatastore } from '../../../datastores/FriendDatastore.ts';
+import { APIHelper, ValidationHelpers } from '../../../modules';
+import { PublicUser } from '../../../types/responses/PublicUser.ts';
 
 const router = APIHelper.getRouter({
 	authenticate: true,

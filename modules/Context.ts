@@ -1,7 +1,7 @@
 /* istanbul ignore file */
-import type {PrismaClient} from '@prisma/client';
-import type {EnvDefinition} from '../types/EnvDefinition';
-import type {Tracer} from './Tracer';
+import type { PrismaClient } from '@prisma/client';
+import type { EnvDefinition } from '../types/EnvDefinition';
+import type { Tracer } from './Tracer';
 
 export interface ContextConfig {
 	tracer: Tracer;

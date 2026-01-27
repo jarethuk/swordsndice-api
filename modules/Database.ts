@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-import {Prisma, PrismaClient} from '@prisma/client';
+import { Prisma, PrismaClient } from '@prisma/client';
 
 export class Database {
 	private readonly dataSource: PrismaClient;

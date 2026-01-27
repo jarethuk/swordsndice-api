@@ -1,7 +1,7 @@
-import {UserDatastore} from '../../../datastores';
-import {APIHelper, ValidationHelpers} from '../../../modules';
-import {UpdateUserRequest} from '../../../types/requests/UpdateUserRequest.ts';
-import {BasicResponse} from '../../../types/responses/BasicResponse.ts';
+import { UserDatastore } from '../../../datastores';
+import { APIHelper, ValidationHelpers } from '../../../modules';
+import { UpdateUserRequest } from '../../../types/requests/UpdateUserRequest.ts';
+import { BasicResponse } from '../../../types/responses/BasicResponse.ts';
 
 const router = APIHelper.getRouter({
 	authenticate: true,

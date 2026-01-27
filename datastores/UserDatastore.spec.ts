@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
-import {v4 as uuid} from 'uuid';
-import {TestFramework, TestRecordHelpers} from '../helpers';
-import {UserDatastore} from './UserDatastore';
+import { v4 as uuid } from 'uuid';
+import { TestFramework, TestRecordHelpers } from '../helpers';
+import { UserDatastore } from './UserDatastore';
 
 describe('UserDatastore', () => {
 	let datastore: UserDatastore;

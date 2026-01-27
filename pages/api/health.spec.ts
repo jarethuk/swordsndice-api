@@ -1,5 +1,5 @@
+import { NextTestHelper } from '../../modules/NextTestHelper';
 import handler, { healthSecret } from './health.page';
-import {NextTestHelper} from '../../modules/NextTestHelper';
 
 describe('/health', () => {
 	const url = '/api/health';

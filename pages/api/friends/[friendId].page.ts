@@ -1,7 +1,7 @@
-import {Expose} from 'class-transformer';
-import {IsUUID} from 'class-validator';
-import {FriendDatastore} from '../../../datastores/FriendDatastore.ts';
-import {APIHelper, ValidationHelpers} from '../../../modules';
+import { Expose } from 'class-transformer';
+import { IsUUID } from 'class-validator';
+import { FriendDatastore } from '../../../datastores/FriendDatastore.ts';
+import { APIHelper, ValidationHelpers } from '../../../modules';
 
 class Query {
 	@IsUUID()

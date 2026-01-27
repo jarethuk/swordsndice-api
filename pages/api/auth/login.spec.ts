@@ -1,6 +1,6 @@
-import {TestRecordHelpers} from '../../../helpers/TestRecordHelpers.ts';
-import {EmailManager} from '../../../modules/EmailManager.ts';
-import {NextTestHelper} from '../../../modules/NextTestHelper';
+import { TestRecordHelpers } from '../../../helpers/TestRecordHelpers.ts';
+import { EmailManager } from '../../../modules/EmailManager.ts';
+import { NextTestHelper } from '../../../modules/NextTestHelper';
 import handler from './login.page';
 
 jest.mock('../../../modules/EmailManager');

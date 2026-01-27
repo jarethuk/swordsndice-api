@@ -1,4 +1,4 @@
-import type {BaseEntity} from './BaseEntity';
+import type { BaseEntity } from './BaseEntity';
 
 export interface GameMemberEntity extends BaseEntity {
 	gameId: string;

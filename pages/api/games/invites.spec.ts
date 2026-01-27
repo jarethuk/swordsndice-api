@@ -1,6 +1,6 @@
-import type {GameEntity, UserEntity} from '../../../datastores/entities';
-import {TestRecordHelpers} from '../../../helpers';
-import {NextTestHelper} from '../../../modules';
+import type { GameEntity, UserEntity } from '../../../datastores/entities';
+import { TestRecordHelpers } from '../../../helpers';
+import { NextTestHelper } from '../../../modules';
 import handler from './invites.page';
 
 describe('/games/invites', () => {

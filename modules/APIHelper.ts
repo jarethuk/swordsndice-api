@@ -1,16 +1,16 @@
 /* istanbul ignore file */
 import 'reflect-metadata';
-import {getIronSession, type SessionOptions} from 'iron-session';
-import type {NextApiResponse} from 'next';
-import {createRouter} from 'next-connect';
-import {devLog} from '../helpers/DevTools';
-import {Env, type EnvDefinition} from '../types/EnvDefinition';
-import type {NextHandler, NodeRouter} from '../types/NextConnect';
-import {Context} from './Context';
-import {Database} from './Database';
-import type {EnhancedRequest} from './EnhancedRequest';
-import {Environment} from './Environment';
-import {ErrorType, type HandledError, Tracer} from './Tracer';
+import { type SessionOptions, getIronSession } from 'iron-session';
+import type { NextApiResponse } from 'next';
+import { createRouter } from 'next-connect';
+import { devLog } from '../helpers/DevTools';
+import { Env, type EnvDefinition } from '../types/EnvDefinition';
+import type { NextHandler, NodeRouter } from '../types/NextConnect';
+import { Context } from './Context';
+import { Database } from './Database';
+import type { EnhancedRequest } from './EnhancedRequest';
+import { Environment } from './Environment';
+import { ErrorType, type HandledError, Tracer } from './Tracer';
 
 interface APIConfig {
 	authenticate?: boolean;

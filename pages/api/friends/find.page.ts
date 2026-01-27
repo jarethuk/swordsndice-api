@@ -1,8 +1,8 @@
-import {Expose, Type} from 'class-transformer';
-import {IsNumber, IsOptional, IsString} from 'class-validator';
-import {FriendDatastore} from '../../../datastores/FriendDatastore.ts';
-import {APIHelper, ValidationHelpers} from '../../../modules';
-import {PublicUser} from '../../../types/responses/PublicUser.ts';
+import { Expose, Type } from 'class-transformer';
+import { IsNumber, IsOptional, IsString } from 'class-validator';
+import { FriendDatastore } from '../../../datastores/FriendDatastore.ts';
+import { APIHelper, ValidationHelpers } from '../../../modules';
+import { PublicUser } from '../../../types/responses/PublicUser.ts';
 
 class Query {
 	@IsString()

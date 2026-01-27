@@ -1,7 +1,7 @@
-import type {GameEntity, UserEntity} from '../../../datastores/entities';
-import {TestRecordHelpers} from '../../../helpers';
-import {NextTestHelper} from '../../../modules';
-import type {CreateGameRequest} from '../../../types/requests/CreateGameRequest.ts';
+import type { GameEntity, UserEntity } from '../../../datastores/entities';
+import { TestRecordHelpers } from '../../../helpers';
+import { NextTestHelper } from '../../../modules';
+import type { CreateGameRequest } from '../../../types/requests/CreateGameRequest.ts';
 import handler from './index.page';
 
 describe('/games', () => {

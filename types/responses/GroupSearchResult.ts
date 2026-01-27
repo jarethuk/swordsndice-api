@@ -1,6 +1,6 @@
-import {Expose} from 'class-transformer';
+import { Expose } from 'class-transformer';
 /* istanbul ignore file */
-import {IsOptional, IsString} from 'class-validator';
+import { IsOptional, IsString } from 'class-validator';
 
 export class GroupSearchResult {
 	@Expose()

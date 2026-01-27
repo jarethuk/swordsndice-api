@@ -1,8 +1,11 @@
-import {type ClassType, transformAndValidateSync,} from 'class-transformer-validator';
-import type {ValidationError} from 'class-validator';
-import {isEmail} from 'class-validator';
-import {validate as isUUID} from 'uuid';
-import {WithContext} from './WithContext';
+import {
+	type ClassType,
+	transformAndValidateSync,
+} from 'class-transformer-validator';
+import type { ValidationError } from 'class-validator';
+import { isEmail } from 'class-validator';
+import { validate as isUUID } from 'uuid';
+import { WithContext } from './WithContext';
 
 export class ValidationHelpers extends WithContext {
 	public checkUUID(id: string): string {

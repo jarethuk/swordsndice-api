@@ -1,7 +1,7 @@
-import type {GroupEntity, UserEntity} from '../../../datastores/entities';
-import {TestRecordHelpers} from '../../../helpers';
-import {NextTestHelper} from '../../../modules';
-import type {UserGroupInvite} from '../../../types/responses/UserGroupInvite.ts';
+import type { GroupEntity, UserEntity } from '../../../datastores/entities';
+import { TestRecordHelpers } from '../../../helpers';
+import { NextTestHelper } from '../../../modules';
+import type { UserGroupInvite } from '../../../types/responses/UserGroupInvite.ts';
 import handler from './invites.page';
 
 describe('/groups/invites', () => {

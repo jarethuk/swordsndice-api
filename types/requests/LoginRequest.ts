@@ -1,6 +1,6 @@
 /* istanbul ignore file */
-import {Expose, Transform} from 'class-transformer';
-import {IsEmail, IsOptional, IsString} from 'class-validator';
+import { Expose, Transform } from 'class-transformer';
+import { IsEmail, IsOptional, IsString } from 'class-validator';
 
 export class LoginRequest {
 	@IsEmail(

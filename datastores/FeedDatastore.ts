@@ -1,6 +1,6 @@
-import {type Context, WithContext} from '../modules';
-import {type FeedItem, FeedItemTypes} from '../types/responses/FeedItem.ts';
-import {FriendDatastore} from './FriendDatastore.ts';
+import { type Context, WithContext } from '../modules';
+import { type FeedItem, FeedItemTypes } from '../types/responses/FeedItem.ts';
+import { FriendDatastore } from './FriendDatastore.ts';
 
 export class FeedDatastore extends WithContext {
 	private friendDatastore: FriendDatastore;

@@ -2,8 +2,8 @@
 import { Expose } from 'class-transformer';
 import { IsString } from 'class-validator';
 
-export class IdResponse {
+export class GoogleLoginRequest {
 	@IsString()
 	@Expose()
-	public id!: string;
+	public token!: string;
 }

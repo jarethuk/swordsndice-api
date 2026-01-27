@@ -1,7 +1,7 @@
-import type {GroupEntity, UserEntity} from '../../../datastores/entities';
-import {TestRecordHelpers} from '../../../helpers';
-import {NextTestHelper} from '../../../modules';
-import type {UserGroup} from '../../../types/responses/UserGroup.ts';
+import type { GroupEntity, UserEntity } from '../../../datastores/entities';
+import { TestRecordHelpers } from '../../../helpers';
+import { NextTestHelper } from '../../../modules';
+import type { UserGroup } from '../../../types/responses/UserGroup.ts';
 import handler from './find.page';
 
 describe('/groups/find', () => {

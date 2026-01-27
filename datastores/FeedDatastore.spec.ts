@@ -1,6 +1,6 @@
-import {TestFramework, TestRecordHelpers} from '../helpers';
-import {FeedDatastore} from './FeedDatastore.ts';
-import type {UserEntity} from './entities';
+import { TestFramework, TestRecordHelpers } from '../helpers';
+import { FeedDatastore } from './FeedDatastore.ts';
+import type { UserEntity } from './entities';
 
 describe('FeedDatastore', () => {
 	let datastore: FeedDatastore;

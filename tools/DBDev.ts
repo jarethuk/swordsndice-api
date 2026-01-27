@@ -1,6 +1,6 @@
-import {Database} from '../modules/Database.ts';
-import {resetDatabase} from './DevHelpers.ts';
-import {FangornDevList, ThorinsDevList} from './DevLists.ts';
+import { Database } from '../modules/Database.ts';
+import { resetDatabase } from './DevHelpers.ts';
+import { FangornDevList, ThorinsDevList } from './DevLists.ts';
 
 const connectionString =
 	'postgresql://postgres:postgres@localhost:5432/swordsndice';

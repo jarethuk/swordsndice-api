@@ -1,7 +1,7 @@
 /* istanbul ignore file */
-import {Expose, Type} from 'class-transformer';
-import {IsDate, IsOptional, IsString, ValidateNested} from 'class-validator';
-import {PublicUser} from './PublicUser.ts';
+import { Expose, Type } from 'class-transformer';
+import { IsDate, IsOptional, IsString, ValidateNested } from 'class-validator';
+import { PublicUser } from './PublicUser.ts';
 
 export class UserGroupInvite {
 	@Expose()

@@ -1,7 +1,7 @@
-import {v4 as uuid} from 'uuid';
-import type {GroupEntity, UserEntity} from '../../../../datastores/entities';
-import {TestRecordHelpers} from '../../../../helpers';
-import {NextTestHelper} from '../../../../modules';
+import { v4 as uuid } from 'uuid';
+import type { GroupEntity, UserEntity } from '../../../../datastores/entities';
+import { TestRecordHelpers } from '../../../../helpers';
+import { NextTestHelper } from '../../../../modules';
 import handler from './index.page';
 
 describe('/groups/[id]', () => {

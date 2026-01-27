@@ -1,5 +1,5 @@
-import {Expose} from 'class-transformer';
-import {IsDate, IsEnum, IsOptional, IsString} from 'class-validator';
+import { Expose } from 'class-transformer';
+import { IsDate, IsEnum, IsOptional, IsString } from 'class-validator';
 
 export const FeedItemTypes = {
 	GameStarted: 'Game Started',

@@ -1,4 +1,4 @@
-import type {BaseEntity} from './BaseEntity';
+import type { BaseEntity } from './BaseEntity';
 
 export interface FriendEntity extends BaseEntity {
 	userId: string;

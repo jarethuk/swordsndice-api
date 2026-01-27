@@ -1,8 +1,8 @@
-import {GroupDatastore} from '../../../datastores/GroupDatastore.ts';
-import {APIHelper, ValidationHelpers} from '../../../modules';
-import {CreateGroupRequest} from '../../../types/requests/CreateGroupRequest.ts';
-import {IdResponse} from '../../../types/responses/IdResponse.ts';
-import {UserGroup} from '../../../types/responses/UserGroup.ts';
+import { GroupDatastore } from '../../../datastores/GroupDatastore.ts';
+import { APIHelper, ValidationHelpers } from '../../../modules';
+import { CreateGroupRequest } from '../../../types/requests/CreateGroupRequest.ts';
+import { IdResponse } from '../../../types/responses/IdResponse.ts';
+import { UserGroup } from '../../../types/responses/UserGroup.ts';
 
 const router = APIHelper.getRouter({
 	authenticate: true,

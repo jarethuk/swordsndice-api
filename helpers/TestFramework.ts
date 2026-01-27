@@ -1,13 +1,13 @@
 /* istanbul ignore file */
-import {exec} from 'node:child_process';
-import type {PrismaClient} from '@prisma/client';
-import {Client} from 'pg';
-import {devLog} from './DevTools';
-import {Env} from '../types/EnvDefinition';
-import {Database} from '../modules/Database';
-import {Tracer} from '../modules/Tracer';
-import {Context} from '../modules/Context';
-import {Cache} from '../modules/Cache'
+import { exec } from 'node:child_process';
+import type { PrismaClient } from '@prisma/client';
+import { Client } from 'pg';
+import { Cache } from '../modules/Cache';
+import { Context } from '../modules/Context';
+import { Database } from '../modules/Database';
+import { Tracer } from '../modules/Tracer';
+import { Env } from '../types/EnvDefinition';
+import { devLog } from './DevTools';
 
 export class TestFramework {
 	public static TestPassword = 'Welcome123!';

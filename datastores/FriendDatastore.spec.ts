@@ -1,6 +1,6 @@
-import {FriendDatastore} from './FriendDatastore.ts';
-import {TestFramework, TestRecordHelpers} from '../helpers';
-import type {UserEntity} from './entities';
+import { TestFramework, TestRecordHelpers } from '../helpers';
+import { FriendDatastore } from './FriendDatastore.ts';
+import type { UserEntity } from './entities';
 
 describe('FriendDatastore', () => {
 	let datastore: FriendDatastore;

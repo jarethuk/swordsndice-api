@@ -1,4 +1,4 @@
-import type {List} from '@prisma/client';
+import type { List } from '@prisma/client';
 
 export const FangornDevList = {
 	id: '46c40ed5-aa3a-4146-b545-3c428713e9c0',

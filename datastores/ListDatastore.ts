@@ -1,5 +1,5 @@
-import {WithContext} from '../modules';
-import type {ListEntity} from './entities';
+import { WithContext } from '../modules';
+import type { ListEntity } from './entities';
 
 export interface CreateListProps {
 	name: string;

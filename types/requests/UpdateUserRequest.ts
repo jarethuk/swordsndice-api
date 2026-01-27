@@ -1,5 +1,5 @@
-import {Expose} from 'class-transformer';
-import {IsOptional, IsString, MaxLength} from 'class-validator';
+import { Expose } from 'class-transformer';
+import { IsOptional, IsString, MaxLength } from 'class-validator';
 
 export class UpdateUserRequest {
 	@Expose()

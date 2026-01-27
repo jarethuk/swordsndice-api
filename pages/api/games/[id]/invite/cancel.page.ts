@@ -1,9 +1,9 @@
-import {Expose} from 'class-transformer';
-import {IsUUID} from 'class-validator';
-import {GameDatastore} from '../../../../../datastores/GameDatastore.ts';
-import {APIHelper, ValidationHelpers} from '../../../../../modules';
-import {InviteUserToGameRequest} from '../../../../../types/requests/InviteUserToGameRequest.ts';
-import {BasicResponse} from '../../../../../types/responses/BasicResponse.ts';
+import { Expose } from 'class-transformer';
+import { IsUUID } from 'class-validator';
+import { GameDatastore } from '../../../../../datastores/GameDatastore.ts';
+import { APIHelper, ValidationHelpers } from '../../../../../modules';
+import { InviteUserToGameRequest } from '../../../../../types/requests/InviteUserToGameRequest.ts';
+import { BasicResponse } from '../../../../../types/responses/BasicResponse.ts';
 
 const router = APIHelper.getRouter({
 	authenticate: true,

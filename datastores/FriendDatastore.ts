@@ -1,5 +1,5 @@
-import {WithContext} from '../modules';
-import type {PublicUser} from '../types/responses/PublicUser.ts';
+import { WithContext } from '../modules';
+import type { PublicUser } from '../types/responses/PublicUser.ts';
 
 export class FriendDatastore extends WithContext {
 	public async addFriendForUser(

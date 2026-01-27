@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
-import {WithContext} from '../modules';
-import type {PublicUser} from '../types/responses/PublicUser.ts';
-import type {UserEntity} from './entities';
+import { WithContext } from '../modules';
+import type { PublicUser } from '../types/responses/PublicUser.ts';
+import type { UserEntity } from './entities';
 
 interface UseLoginTokenProps {
 	email: string;

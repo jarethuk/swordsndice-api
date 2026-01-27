@@ -1,6 +1,6 @@
-import {GameDatastore} from '../../../datastores/GameDatastore.ts';
-import {APIHelper, ValidationHelpers} from '../../../modules';
-import {GameInviteResponse} from '../../../types/responses/GameInviteResponse.ts';
+import { GameDatastore } from '../../../datastores/GameDatastore.ts';
+import { APIHelper, ValidationHelpers } from '../../../modules';
+import { GameInviteResponse } from '../../../types/responses/GameInviteResponse.ts';
 
 const router = APIHelper.getRouter({
 	authenticate: true,

@@ -21,7 +21,7 @@ export type RouteShortcutMethod<This, H extends FunctionLike> = (
 	...fns: Nextable<H>[]
 ) => This;
 
-import type {IncomingMessage, ServerResponse} from 'node:http';
+import type { IncomingMessage, ServerResponse } from 'node:http';
 
 export type RequestHandler<
 	Req extends IncomingMessage,

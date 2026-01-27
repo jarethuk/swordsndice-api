@@ -1,6 +1,16 @@
 /* istanbul ignore file */
-import {Body, Container, Head, Heading, Html, Img, Preview, Section, Text,} from '@react-email/components';
-import {Tailwind} from '@react-email/tailwind';
+import {
+	Body,
+	Container,
+	Head,
+	Heading,
+	Html,
+	Img,
+	Preview,
+	Section,
+	Text,
+} from '@react-email/components';
+import { Tailwind } from '@react-email/tailwind';
 
 interface Props {
 	email: string;

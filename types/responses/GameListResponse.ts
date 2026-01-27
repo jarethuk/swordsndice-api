@@ -1,7 +1,14 @@
 /* istanbul ignore file */
-import {Expose, Type} from 'class-transformer';
-import {IsBoolean, IsDate, IsNumber, IsOptional, IsString, ValidateNested,} from 'class-validator';
-import {PublicUser} from './PublicUser.ts';
+import { Expose, Type } from 'class-transformer';
+import {
+	IsBoolean,
+	IsDate,
+	IsNumber,
+	IsOptional,
+	IsString,
+	ValidateNested,
+} from 'class-validator';
+import { PublicUser } from './PublicUser.ts';
 
 export class GameListMemberResponse extends PublicUser {
 	@Expose()

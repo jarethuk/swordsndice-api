@@ -1,6 +1,6 @@
 /* istanbul ignore file */
-import {Expose} from 'class-transformer';
-import {IsBoolean, IsOptional, IsString, MaxLength} from 'class-validator';
+import { Expose } from 'class-transformer';
+import { IsBoolean, IsOptional, IsString, MaxLength } from 'class-validator';
 
 export class UpdateGroupRequest {
 	@Expose()

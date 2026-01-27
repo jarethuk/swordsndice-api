@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-import {exec} from 'node:child_process';
+import { exec } from 'node:child_process';
 import pg from 'pg';
 
 export const runCommand = (command: string) => {

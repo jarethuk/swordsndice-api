@@ -1,4 +1,4 @@
-import {APIHelper} from '../../modules/APIHelper';
+import { APIHelper } from '../../modules/APIHelper';
 
 const router = APIHelper.getRouter();
 export const healthSecret = 'somethingsecret'; // Just to prevent spam on the db

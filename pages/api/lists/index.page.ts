@@ -1,7 +1,7 @@
-import {ListDatastore} from '../../../datastores';
-import {APIHelper, ValidationHelpers} from '../../../modules';
-import {ListBody} from '../../../types/ListBody.ts';
-import {IdResponse} from '../../../types/responses/IdResponse.ts';
+import { ListDatastore } from '../../../datastores';
+import { APIHelper, ValidationHelpers } from '../../../modules';
+import { ListBody } from '../../../types/ListBody.ts';
+import { IdResponse } from '../../../types/responses/IdResponse.ts';
 
 const router = APIHelper.getRouter({
 	authenticate: true,

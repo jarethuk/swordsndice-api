@@ -1,10 +1,10 @@
-import {IsEnum, IsOptional} from 'class-validator';
-import {GameDatastore} from '../../../datastores/GameDatastore.ts';
-import {APIHelper, ValidationHelpers} from '../../../modules';
-import {CreateGameRequest} from '../../../types/requests/CreateGameRequest.ts';
-import {GameListResponse} from '../../../types/responses/GameListResponse.ts';
-import {IdResponse} from '../../../types/responses/IdResponse.ts';
-import {Expose} from 'class-transformer';
+import { Expose } from 'class-transformer';
+import { IsEnum, IsOptional } from 'class-validator';
+import { GameDatastore } from '../../../datastores/GameDatastore.ts';
+import { APIHelper, ValidationHelpers } from '../../../modules';
+import { CreateGameRequest } from '../../../types/requests/CreateGameRequest.ts';
+import { GameListResponse } from '../../../types/responses/GameListResponse.ts';
+import { IdResponse } from '../../../types/responses/IdResponse.ts';
 
 const router = APIHelper.getRouter({
 	authenticate: true,

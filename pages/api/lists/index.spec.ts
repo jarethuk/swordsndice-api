@@ -1,8 +1,8 @@
-import type {ListEntity, UserEntity} from '../../../datastores/entities';
-import {TestRecordHelpers} from '../../../helpers';
-import {NextTestHelper} from '../../../modules';
+import type { ListEntity, UserEntity } from '../../../datastores/entities';
+import { TestRecordHelpers } from '../../../helpers';
+import { NextTestHelper } from '../../../modules';
+import { ListBody } from '../../../types/ListBody.ts';
 import handler from './index.page';
-import {ListBody} from '../../../types/ListBody.ts';
 
 describe('/list', () => {
 	const url = '/api/list';

@@ -1,8 +1,11 @@
-import {v4 as uuid} from 'uuid';
-import type {GameEntity, UserEntity,} from '../../../../../datastores/entities';
-import {TestRecordHelpers} from '../../../../../helpers';
-import {NextTestHelper} from '../../../../../modules';
-import type {InviteUserToGameRequest} from '../../../../../types/requests/InviteUserToGameRequest.ts';
+import { v4 as uuid } from 'uuid';
+import type {
+	GameEntity,
+	UserEntity,
+} from '../../../../../datastores/entities';
+import { TestRecordHelpers } from '../../../../../helpers';
+import { NextTestHelper } from '../../../../../modules';
+import type { InviteUserToGameRequest } from '../../../../../types/requests/InviteUserToGameRequest.ts';
 import handler from './accept.page';
 
 describe('/games/[id]/invites/accept', () => {

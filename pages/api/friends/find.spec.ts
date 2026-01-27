@@ -1,8 +1,8 @@
-import type {UserEntity} from '../../../datastores/entities';
-import {TestRecordHelpers} from '../../../helpers';
-import {NextTestHelper} from '../../../modules';
+import type { UserEntity } from '../../../datastores/entities';
+import { TestRecordHelpers } from '../../../helpers';
+import { NextTestHelper } from '../../../modules';
+import type { PublicUser } from '../../../types/responses/PublicUser.ts';
 import handler from './find.page';
-import type {PublicUser} from '../../../types/responses/PublicUser.ts';
 
 describe('/friends/find', () => {
 	const url = '/api/friends/find';

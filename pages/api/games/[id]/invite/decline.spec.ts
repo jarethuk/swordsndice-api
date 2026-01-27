@@ -1,7 +1,10 @@
-import {v4 as uuid} from 'uuid';
-import type {GameEntity, UserEntity,} from '../../../../../datastores/entities';
-import {TestRecordHelpers} from '../../../../../helpers';
-import {NextTestHelper} from '../../../../../modules';
+import { v4 as uuid } from 'uuid';
+import type {
+	GameEntity,
+	UserEntity,
+} from '../../../../../datastores/entities';
+import { TestRecordHelpers } from '../../../../../helpers';
+import { NextTestHelper } from '../../../../../modules';
 import handler from './decline.page';
 
 describe('/games/[id]/invites/decline', () => {

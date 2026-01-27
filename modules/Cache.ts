@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-import {createClient} from 'redis';
+import { createClient } from 'redis';
 
 interface RedisClient {
 	get: (key: string) => Promise<string | undefined>;

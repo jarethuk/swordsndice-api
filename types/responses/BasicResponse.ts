@@ -1,6 +1,6 @@
-import {Expose} from 'class-transformer';
+import { Expose } from 'class-transformer';
 /* istanbul ignore file */
-import {IsBoolean} from 'class-validator';
+import { IsBoolean } from 'class-validator';
 
 export class BasicResponse {
 	@IsBoolean()

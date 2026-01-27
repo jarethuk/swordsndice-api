@@ -1,8 +1,13 @@
 /* istanbul ignore file */
 import 'reflect-metadata';
-import {Expose, Type} from 'class-transformer';
-import {transformAndValidateSync} from 'class-transformer-validator';
-import {IsNotEmpty, IsOptional, IsString, ValidateNested} from 'class-validator'; // class DatabaseEnv {
+import { Expose, Type } from 'class-transformer';
+import { transformAndValidateSync } from 'class-transformer-validator';
+import {
+	IsNotEmpty,
+	IsOptional,
+	IsString,
+	ValidateNested,
+} from 'class-validator'; // class DatabaseEnv {
 
 class DatabaseEnv {
 	@IsString()

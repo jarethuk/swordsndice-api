@@ -1,9 +1,12 @@
-import {WithContext} from '../modules';
-import type {GroupResponse, GroupResponseMember,} from '../types/responses/GroupResponse.ts';
-import type {GroupSearchResult} from '../types/responses/GroupSearchResult.ts';
-import type {UserGroup} from '../types/responses/UserGroup.ts';
-import type {UserGroupInvite} from '../types/responses/UserGroupInvite.ts';
-import type {GroupEntity, GroupMemberEntity} from './entities';
+import { WithContext } from '../modules';
+import type {
+	GroupResponse,
+	GroupResponseMember,
+} from '../types/responses/GroupResponse.ts';
+import type { GroupSearchResult } from '../types/responses/GroupSearchResult.ts';
+import type { UserGroup } from '../types/responses/UserGroup.ts';
+import type { UserGroupInvite } from '../types/responses/UserGroupInvite.ts';
+import type { GroupEntity, GroupMemberEntity } from './entities';
 
 export interface CreateGroupProps {
 	name: string;

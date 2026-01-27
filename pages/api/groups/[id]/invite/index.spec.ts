@@ -1,8 +1,11 @@
-import type {GroupEntity, UserEntity} from '../../../../../datastores/entities';
+import { v4 as uuid } from 'uuid';
+import type {
+	GroupEntity,
+	UserEntity,
+} from '../../../../../datastores/entities';
+import { TestRecordHelpers } from '../../../../../helpers';
+import { NextTestHelper } from '../../../../../modules';
 import handler from './index.page';
-import {NextTestHelper} from '../../../../../modules';
-import {TestRecordHelpers} from '../../../../../helpers';
-import {v4 as uuid} from 'uuid';
 
 describe('/groups/[id]/invite', () => {
 	const url = '/api/groups/[id]/invite';

@@ -1,7 +1,13 @@
 /* istanbul ignore file */
-import {Expose, Type} from 'class-transformer';
-import {IsBoolean, IsOptional, IsString, IsUUID, ValidateNested,} from 'class-validator';
-import {PublicUser} from './PublicUser.ts';
+import { Expose, Type } from 'class-transformer';
+import {
+	IsBoolean,
+	IsOptional,
+	IsString,
+	IsUUID,
+	ValidateNested,
+} from 'class-validator';
+import { PublicUser } from './PublicUser.ts';
 
 export class GroupResponseMember {
 	@Expose()

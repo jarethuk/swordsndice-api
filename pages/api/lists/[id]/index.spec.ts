@@ -1,9 +1,9 @@
-import type {ListEntity, UserEntity} from '../../../../datastores/entities';
+import { v4 as uuid } from 'uuid';
+import type { ListEntity, UserEntity } from '../../../../datastores/entities';
+import { TestRecordHelpers } from '../../../../helpers';
+import { NextTestHelper } from '../../../../modules';
+import type { ListBody } from '../../../../types/ListBody.ts';
 import handler from './index.page';
-import {NextTestHelper} from '../../../../modules';
-import {TestRecordHelpers} from '../../../../helpers';
-import type {ListBody} from '../../../../types/ListBody.ts';
-import {v4 as uuid} from 'uuid';
 
 describe('/list/[id]', () => {
 	const url = '/api/list/[id]';

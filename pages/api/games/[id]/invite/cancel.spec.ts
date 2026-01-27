@@ -1,9 +1,12 @@
-import {v4 as uuid} from 'uuid';
+import { v4 as uuid } from 'uuid';
+import type {
+	GameEntity,
+	UserEntity,
+} from '../../../../../datastores/entities';
+import { TestRecordHelpers } from '../../../../../helpers';
+import { NextTestHelper } from '../../../../../modules';
+import type { InviteUserToGameRequest } from '../../../../../types/requests/InviteUserToGameRequest.ts';
 import handler from './cancel.page';
-import type {GameEntity, UserEntity,} from '../../../../../datastores/entities';
-import {NextTestHelper} from '../../../../../modules';
-import {TestRecordHelpers} from '../../../../../helpers';
-import type {InviteUserToGameRequest} from '../../../../../types/requests/InviteUserToGameRequest.ts';
 
 describe('/games/[id]/invites/cancel', () => {
 	const url = '/api/games/[id]/invites/cancel';

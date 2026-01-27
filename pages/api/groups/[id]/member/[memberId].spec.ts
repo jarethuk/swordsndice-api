@@ -1,8 +1,11 @@
-import {v4 as uuid} from 'uuid';
-import type {GroupEntity, UserEntity,} from '../../../../../datastores/entities';
-import {TestRecordHelpers} from '../../../../../helpers';
-import {NextTestHelper} from '../../../../../modules';
-import type {UpdateGroupMemberRequest} from '../../../../../types/requests/UpdateGroupMemberRequest.ts';
+import { v4 as uuid } from 'uuid';
+import type {
+	GroupEntity,
+	UserEntity,
+} from '../../../../../datastores/entities';
+import { TestRecordHelpers } from '../../../../../helpers';
+import { NextTestHelper } from '../../../../../modules';
+import type { UpdateGroupMemberRequest } from '../../../../../types/requests/UpdateGroupMemberRequest.ts';
 import handler from './[memberId].page.ts';
 
 describe('/groups/[id]/member/[memberId]', () => {

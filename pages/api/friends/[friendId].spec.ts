@@ -1,7 +1,7 @@
-import {v4 as uuid} from 'uuid';
-import type {UserEntity} from '../../../datastores/entities';
-import {TestRecordHelpers} from '../../../helpers';
-import {NextTestHelper} from '../../../modules';
+import { v4 as uuid } from 'uuid';
+import type { UserEntity } from '../../../datastores/entities';
+import { TestRecordHelpers } from '../../../helpers';
+import { NextTestHelper } from '../../../modules';
 import handler from './[friendId].page';
 
 describe('/friends/[friendId]', () => {

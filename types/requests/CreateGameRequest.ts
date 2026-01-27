@@ -1,6 +1,6 @@
-import {Expose} from 'class-transformer';
+import { Expose } from 'class-transformer';
 /* istanbul ignore file */
-import {IsNumber, IsOptional, IsString} from 'class-validator';
+import { IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class CreateGameRequest {
 	@Expose()

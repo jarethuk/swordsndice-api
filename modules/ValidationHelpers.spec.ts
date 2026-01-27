@@ -1,8 +1,8 @@
-import {Expose} from 'class-transformer';
-import {IsBoolean} from 'class-validator';
-import {v4 as uuid} from 'uuid';
-import {ValidationHelpers} from './ValidationHelpers';
-import {getEmptyContext} from '../helpers/TestHelpers';
+import { Expose } from 'class-transformer';
+import { IsBoolean } from 'class-validator';
+import { v4 as uuid } from 'uuid';
+import { getEmptyContext } from '../helpers/TestHelpers';
+import { ValidationHelpers } from './ValidationHelpers';
 
 class TestClass {
 	@IsBoolean()

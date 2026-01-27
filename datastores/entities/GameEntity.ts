@@ -1,5 +1,5 @@
-import type {BaseEntity} from './BaseEntity';
-import type {GameMemberEntity} from './GameMemberEntity';
+import type { BaseEntity } from './BaseEntity';
+import type { GameMemberEntity } from './GameMemberEntity';
 
 export interface GameEntity extends BaseEntity {
 	createdByUserId: string;

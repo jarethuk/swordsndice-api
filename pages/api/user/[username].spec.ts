@@ -1,7 +1,7 @@
-import type {UserEntity} from '../../../datastores/entities';
-import {TestRecordHelpers} from '../../../helpers';
-import {NextTestHelper} from '../../../modules';
-import type {PublicUser} from '../../../types/responses/PublicUser.ts';
+import type { UserEntity } from '../../../datastores/entities';
+import { TestRecordHelpers } from '../../../helpers';
+import { NextTestHelper } from '../../../modules';
+import type { PublicUser } from '../../../types/responses/PublicUser.ts';
 import handler from './[username].page';
 
 describe('/user/[username]', () => {

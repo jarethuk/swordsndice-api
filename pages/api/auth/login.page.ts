@@ -1,12 +1,10 @@
-import {getIronSession} from 'iron-session';
-import {UserDatastore} from '../../../datastores/UserDatastore';
-import type {UserEntity} from '../../../datastores/entities/UserEntity';
-import {APIHelper, ironOptions, type SessionData,} from '../../../modules/APIHelper';
-import {EmailManager} from '../../../modules/EmailManager';
-import {ValidationHelpers} from '../../../modules/ValidationHelpers';
-import {LoginRequest} from '../../../types/requests/LoginRequest';
-import {BasicResponse} from '../../../types/responses/BasicResponse';
-import {UserResponse} from '../../../types/responses/UserResponse';
+import { UserDatastore } from '../../../datastores/UserDatastore';
+import { APIHelper } from '../../../modules/APIHelper';
+import { Authentication } from '../../../modules/Authentication.ts';
+import { EmailManager } from '../../../modules/EmailManager';
+import { ValidationHelpers } from '../../../modules/ValidationHelpers';
+import { LoginRequest } from '../../../types/requests/LoginRequest';
+import { BasicResponse } from '../../../types/responses/BasicResponse';
 
 const router = APIHelper.getRouter();
 
@@ -23,41 +21,8 @@ router.put(async (request, response) => {
 	if (code) {
 		await datastore.useLoginToken({ code, email });
 
-		let user = await datastore.getUserByEmail(email);
-
-		if (!user) {
-			user = {
-				id: await datastore.createUser({
-					email,
-				}),
-				email,
-			} as UserEntity;
-		}
-
-		const { id, username, image } = user;
-
-		await datastore.updateUser(id, {
-			lastLogin: new Date(),
-		});
-
-		const session = await getIronSession<SessionData>(
-			request,
-			response,
-			ironOptions,
-		);
-
-		session.userId = id;
-
-		await session.save();
-
-		response.json(
-			validator.validate(UserResponse, {
-				id,
-				email,
-				username,
-				image,
-			} as UserResponse),
-		);
+		const authentication = new Authentication(context);
+		await authentication.loginEmail(email, request, response);
 	} else {
 		const code = await datastore.createUserLoginToken(email);
 

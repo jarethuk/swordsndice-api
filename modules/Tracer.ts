@@ -1,7 +1,7 @@
-import {v4 as uuid} from 'uuid';
-import {devLog} from '../helpers/DevTools';
+import { v4 as uuid } from 'uuid';
+import { devLog } from '../helpers/DevTools';
 import callsites from './Callsites';
-import {Environment} from './Environment';
+import { Environment } from './Environment';
 
 export const ErrorType = {
 	Client: 'Client',
