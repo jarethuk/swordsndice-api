@@ -84,7 +84,6 @@ const getOrError = (key: string): string => {
 export const Env = () => {
 	const env = {
 		sessionKey: getOrError('SESSION_KEY'),
-		redis: getOrError('REDIS_URL'),
 		database: {
 			nonPoolingUrl: getOrError('POSTGRES_URL_NON_POOLING'),
 			poolingUrl: getOrError('POSTGRES_PRISMA_URL'),
