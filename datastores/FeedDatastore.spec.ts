@@ -1,6 +1,6 @@
-import { TestFramework, TestRecordHelpers } from '../helpers';
-import { FeedDatastore } from './FeedDatastore.ts';
-import type { UserEntity } from './entities';
+import {TestFramework, TestRecordHelpers} from '../helpers';
+import {FeedDatastore} from './FeedDatastore.ts';
+import type {UserEntity} from './entities';
 
 describe('FeedDatastore', () => {
 	let datastore: FeedDatastore;
@@ -59,6 +59,7 @@ describe('FeedDatastore', () => {
 			});
 			await testRecords.createGameMember(otherUser.id, completedFriendGame.id, {
 				points: 5,
+				isWinner: true,
 			});
 
 			await testRecords.createGame(user.id, {
@@ -92,6 +93,7 @@ describe('FeedDatastore', () => {
 					title: '@Friend started a Test Game of 500pts',
 					type: 'Game Started',
 					date: expect.any(Date),
+					subTitle: undefined,
 				},
 			]);
 		});

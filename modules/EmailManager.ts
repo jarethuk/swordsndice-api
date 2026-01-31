@@ -1,17 +1,18 @@
 /* istanbul ignore file */
-import { render } from '@react-email/render';
+import {render} from '@react-email/render';
 import nodemailer from 'nodemailer';
 import LoginEmail from '../emails/login';
-import { devLog } from '../helpers';
-import type { Context } from './Context';
-import { Environment } from './Environment';
-import { WithContext } from './WithContext';
+import {devLog} from '../helpers';
+import type {Context} from './Context';
+import {Environment} from './Environment';
+import {WithContext} from './WithContext';
 
 interface SendConfig {
 	from: string;
 	to: string;
 	subject: string;
 	template: any;
+	text: string;
 }
 
 interface SendLoginEmailProps {
@@ -53,10 +54,11 @@ export class EmailManager extends WithContext {
 			to: email,
 			subject: 'Login to Swords & Dice',
 			template: LoginEmail({ email, code }),
+			text: `Your login code is ${code}`,
 		});
 	}
 
-	private async send({ from, to, subject, template }: SendConfig) {
+	private async send({ from, to, subject, template, text }: SendConfig) {
 		try {
 			const html = await render(template);
 
@@ -65,6 +67,7 @@ export class EmailManager extends WithContext {
 				to,
 				subject,
 				html,
+				text,
 			};
 
 			await this.transporter.sendMail(options);

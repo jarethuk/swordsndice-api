@@ -1,8 +1,8 @@
-import { v4 as uuid } from 'uuid';
-import type { GameEntity, UserEntity } from '../../../../datastores/entities';
-import { MockListBody, TestRecordHelpers } from '../../../../helpers';
-import { NextTestHelper } from '../../../../modules';
-import type { UpdateGameRequest } from '../../../../types/requests/UpdateGameRequest.ts';
+import {v4 as uuid} from 'uuid';
+import type {GameEntity, UserEntity} from '../../../../datastores/entities';
+import {MockListBody, TestRecordHelpers} from '../../../../helpers';
+import {NextTestHelper} from '../../../../modules';
+import type {UpdateGameRequest} from '../../../../types/requests/UpdateGameRequest.ts';
 import handler from './index.page';
 
 describe('/games/[id]', () => {
@@ -58,14 +58,17 @@ describe('/games/[id]', () => {
 				inviteCode: null,
 				members: [
 					{
+						id: expect.any(String),
 						user: {
 							id: user.id,
 							username: user.username,
 							image: user.image,
 						},
 						list: MockListBody,
-						points: 0,
+						points: 1,
 						isWinner: false,
+						modelCount: 3,
+						modelCountRemaining: 2,
 					},
 				],
 				invites: [
