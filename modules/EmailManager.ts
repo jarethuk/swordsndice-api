@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 import {render} from '@react-email/render';
-import nodemailer from 'nodemailer';
+import {Resend} from 'resend';
 import LoginEmail from '../emails/login';
 import {devLog} from '../helpers';
 import type {Context} from './Context';
@@ -21,22 +21,12 @@ interface SendLoginEmailProps {
 }
 
 export class EmailManager extends WithContext {
-	private transporter;
+	private resend;
 
 	constructor(context: Context) {
 		super(context);
 
-		const { user, password } = context.env.email;
-
-		this.transporter = nodemailer.createTransport({
-			host: 'smtp.ionos.co.uk',
-			port: 465,
-			requireTLS: true,
-			auth: {
-				user,
-				pass: password,
-			},
-		});
+		this.resend = new Resend(this.context.env.email.resendKey);
 	}
 
 	public async sendLoginEmail({ email, code }: SendLoginEmailProps) {
@@ -62,15 +52,13 @@ export class EmailManager extends WithContext {
 		try {
 			const html = await render(template);
 
-			const options = {
+			this.resend.emails.send({
 				from,
 				to,
 				subject,
 				html,
 				text,
-			};
-
-			await this.transporter.sendMail(options);
+			});
 		} catch (e) {
 			this.context.tracer.logError(
 				'send',

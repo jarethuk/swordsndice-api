@@ -25,7 +25,7 @@ class EmailEnv {
 	@IsString()
 	@IsOptional()
 	@Expose()
-	password?: string;
+	resendKey?: string;
 }
 
 class GoogleEnv {
@@ -90,7 +90,7 @@ export const Env = () => {
 		},
 		email: {
 			user: process.env.EMAIL_USER,
-			password: process.env.EMAIL_PASSWORD,
+			resendKey: process.env.RESEND,
 		},
 		google: {
 			webClientId: process.env.GOOGLE_WEB_CLIENT_ID,
