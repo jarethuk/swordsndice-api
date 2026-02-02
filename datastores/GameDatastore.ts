@@ -1,9 +1,9 @@
-import { WithContext } from '../modules';
-import type { ListBody } from '../types/ListBody.ts';
-import type { GameInviteResponse } from '../types/responses/GameInviteResponse.ts';
-import type { GameListResponse } from '../types/responses/GameListResponse.ts';
-import type { GameResponse } from '../types/responses/GameResponse.ts';
-import type { PublicUser } from '../types/responses/PublicUser.ts';
+import {WithContext} from '../modules';
+import type {ListBody} from '../types/ListBody.ts';
+import type {GameInviteResponse} from '../types/responses/GameInviteResponse.ts';
+import type {GameListResponse} from '../types/responses/GameListResponse.ts';
+import type {GameResponse} from '../types/responses/GameResponse.ts';
+import type {PublicUser} from '../types/responses/PublicUser.ts';
 
 export interface CreateGameProps {
 	game: string;
@@ -100,7 +100,11 @@ export class GameDatastore extends WithContext {
 		const promises = [];
 
 		for (const member of members) {
-			if (!member.list) continue;
+			if (!member.list) {
+				throw this.context.tracer.getClientError(
+					'All members must have a list to start a game.',
+				);
+			}
 
 			const list = member.list as unknown as ListBody;
 			let count = 0;

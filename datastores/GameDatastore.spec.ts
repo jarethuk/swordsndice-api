@@ -4,6 +4,7 @@ import type {GameInviteResponse} from '../types/responses/GameInviteResponse.ts'
 import type {GameResponse} from '../types/responses/GameResponse.ts';
 import {GameDatastore} from './GameDatastore.ts';
 import type {GameEntity, ListEntity, UserEntity} from './entities';
+import {FangornDevList, ThorinsDevList} from '../tools/DevLists.ts';
 
 describe('GameDatastore', () => {
 	let datastore: GameDatastore;
@@ -103,6 +104,42 @@ describe('GameDatastore', () => {
 			});
 
 			expect(record!.points).toEqual(1);
+		});
+
+		describe('When the game is started', () => {
+			it('Should set the model count and models remaining', async () => {
+				const { id } = await testRecords.createGame(user.id);
+
+				await datastore.setGameListForUser({
+					userId: user.id,
+					list: ThorinsDevList,
+					gameId: id,
+				});
+
+				await testRecords.createGameMember(friend.id, id, {
+					points: 5,
+					list: FangornDevList,
+				});
+
+				await datastore.updateGameForUser(user.id, id, {
+					points: 3,
+				});
+
+				await datastore.updateGameForUser(user.id, id, {
+					isStarted: true,
+				});
+
+				const members = await testFramework.database.gameMember.findMany({
+					where: { gameId: id },
+				});
+
+				expect(members.find((x) => x.userId === user.id)?.modelCount).toEqual(
+					12,
+				);
+				expect(members.find((x) => x.userId === friend.id)?.modelCount).toEqual(
+					6,
+				);
+			});
 		});
 
 		describe('When the game is completed', () => {
