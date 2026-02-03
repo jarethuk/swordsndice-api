@@ -1,9 +1,10 @@
 import { Expose, Transform } from 'class-transformer';
 import { IsString } from 'class-validator';
-import { UserDatastore } from '../../../datastores';
+import { ListDatastore, UserDatastore } from '../../../datastores';
 import { FriendDatastore } from '../../../datastores/FriendDatastore.ts';
+import { GameDatastore } from '../../../datastores/GameDatastore.ts';
 import { APIHelper, ValidationHelpers } from '../../../modules';
-import { PublicUser } from '../../../types/responses/PublicUser.ts';
+import { PublicUserFull } from '../../../types/responses/PublicUserFull.ts';
 
 class Query {
 	@IsString()
@@ -25,12 +26,21 @@ router.get(async ({ context, query }, response) => {
 
 	if (user) {
 		const friendDatastore = new FriendDatastore(context);
-		const isFriend = await friendDatastore.isFriend(context.userId, user.id);
+		const listDatastore = new ListDatastore(context);
+		const gameDatastore = new GameDatastore(context);
+
+		const [isFriend, lists, games] = await Promise.all([
+			friendDatastore.isFriend(context.userId, user.id),
+			listDatastore.getRecentListsForUser(user.id),
+			gameDatastore.getUserGames(user.id, 'complete', 5),
+		]);
 
 		response.json(
-			validation.validate(PublicUser, {
+			validation.validate(PublicUserFull, {
 				...user,
 				isFriend,
+				lists,
+				games,
 			}),
 		);
 	} else {

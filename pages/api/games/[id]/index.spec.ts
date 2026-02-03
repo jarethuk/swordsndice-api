@@ -1,8 +1,8 @@
-import {v4 as uuid} from 'uuid';
-import type {GameEntity, UserEntity} from '../../../../datastores/entities';
-import {MockListBody, TestRecordHelpers} from '../../../../helpers';
-import {NextTestHelper} from '../../../../modules';
-import type {UpdateGameRequest} from '../../../../types/requests/UpdateGameRequest.ts';
+import { v4 as uuid } from 'uuid';
+import type { GameEntity, UserEntity } from '../../../../datastores/entities';
+import { MockListBody, TestRecordHelpers } from '../../../../helpers';
+import { NextTestHelper } from '../../../../modules';
+import type { UpdateGameRequest } from '../../../../types/requests/UpdateGameRequest.ts';
 import handler from './index.page';
 
 describe('/games/[id]', () => {

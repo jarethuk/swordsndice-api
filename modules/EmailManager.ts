@@ -1,11 +1,11 @@
 /* istanbul ignore file */
-import {render} from '@react-email/render';
-import {Resend} from 'resend';
+import { render } from '@react-email/render';
+import { Resend } from 'resend';
 import LoginEmail from '../emails/login';
-import {devLog} from '../helpers';
-import type {Context} from './Context';
-import {Environment} from './Environment';
-import {WithContext} from './WithContext';
+import { devLog } from '../helpers';
+import type { Context } from './Context';
+import { Environment } from './Environment';
+import { WithContext } from './WithContext';
 
 interface SendConfig {
 	from: string;

@@ -1,9 +1,9 @@
-import {WithContext} from '../modules';
-import type {ListBody} from '../types/ListBody.ts';
-import type {GameInviteResponse} from '../types/responses/GameInviteResponse.ts';
-import type {GameListResponse} from '../types/responses/GameListResponse.ts';
-import type {GameResponse} from '../types/responses/GameResponse.ts';
-import type {PublicUser} from '../types/responses/PublicUser.ts';
+import { WithContext } from '../modules';
+import type { ListBody } from '../types/ListBody.ts';
+import type { GameInviteResponse } from '../types/responses/GameInviteResponse.ts';
+import type { GameListResponse } from '../types/responses/GameListResponse.ts';
+import type { GameResponse } from '../types/responses/GameResponse.ts';
+import type { PublicUser } from '../types/responses/PublicUser.ts';
 
 export interface CreateGameProps {
 	game: string;
@@ -337,6 +337,7 @@ export class GameDatastore extends WithContext {
 	public async getUserGames(
 		userId: string,
 		state?: 'active' | 'complete',
+		take = 20,
 	): Promise<GameListResponse[]> {
 		const games = await this.context.database.gameMember.findMany({
 			where: {
@@ -348,8 +349,9 @@ export class GameDatastore extends WithContext {
 					: {}),
 			},
 			orderBy: {
-				createdAt: 'desc',
+				updatedAt: 'desc',
 			},
+			take,
 			select: {
 				game: {
 					select: {

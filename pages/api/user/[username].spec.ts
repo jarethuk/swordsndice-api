@@ -1,6 +1,7 @@
 import type { UserEntity } from '../../../datastores/entities';
 import { TestRecordHelpers } from '../../../helpers';
-import { NextTestHelper } from '../../../modules';
+import { NextTestHelper, ValidationHelpers } from '../../../modules';
+import { ListBody } from '../../../types/ListBody.ts';
 import type { PublicUser } from '../../../types/responses/PublicUser.ts';
 import handler from './[username].page';
 
@@ -65,6 +66,8 @@ describe('/user/[username]', () => {
 				image: otherUser.image,
 				isFriend: false,
 				description: otherUser.description,
+				lists: [],
+				games: [],
 			} as PublicUser);
 		});
 
@@ -87,7 +90,65 @@ describe('/user/[username]', () => {
 				image: otherUser.image,
 				isFriend: true,
 				description: otherUser.description,
+				lists: [],
+				games: [],
 			} as PublicUser);
+		});
+
+		it('Should return recent lists for the user', async () => {
+			const list1 = await testRecordHelpers.createList(otherUser.id);
+			const list2 = await testRecordHelpers.createList(otherUser.id);
+
+			const { body } = await test.get({
+				handler,
+				url,
+				user,
+				parameters: {
+					username: otherUser.username,
+				},
+			});
+
+			const validator = new ValidationHelpers(test.getTestContext());
+
+			expect(body.lists).toEqual([
+				validator.validate(ListBody, list2),
+				validator.validate(ListBody, list1),
+			]);
+		});
+
+		it('Should return recent completed games for the user', async () => {
+			const completeGame = await testRecordHelpers.createGame(otherUser.id, {
+				isComplete: true,
+			});
+
+			await testRecordHelpers.createGame(otherUser.id, {
+				isComplete: false,
+			});
+
+			const { body } = await test.get({
+				handler,
+				url,
+				user,
+				parameters: {
+					username: otherUser.username,
+				},
+			});
+
+			expect(body.games).toHaveLength(1);
+			expect(body.games[0]).toEqual({
+				createdAt: completeGame.createdAt.toISOString(),
+				game: completeGame.game,
+				id: completeGame.id,
+				members: [
+					{
+						id: otherUser.id,
+						image: otherUser.image,
+						isWinner: false,
+						username: otherUser.username,
+					},
+				],
+				points: completeGame.points,
+			});
 		});
 	});
 });

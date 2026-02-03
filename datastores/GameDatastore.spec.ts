@@ -1,10 +1,10 @@
-import {v4 as uuid} from 'uuid';
-import {TestFramework, TestRecordHelpers} from '../helpers';
-import type {GameInviteResponse} from '../types/responses/GameInviteResponse.ts';
-import type {GameResponse} from '../types/responses/GameResponse.ts';
-import {GameDatastore} from './GameDatastore.ts';
-import type {GameEntity, ListEntity, UserEntity} from './entities';
-import {FangornDevList, ThorinsDevList} from '../tools/DevLists.ts';
+import { v4 as uuid } from 'uuid';
+import { TestFramework, TestRecordHelpers } from '../helpers';
+import { FangornDevList, ThorinsDevList } from '../tools/DevLists.ts';
+import type { GameInviteResponse } from '../types/responses/GameInviteResponse.ts';
+import type { GameResponse } from '../types/responses/GameResponse.ts';
+import { GameDatastore } from './GameDatastore.ts';
+import type { GameEntity, ListEntity, UserEntity } from './entities';
 
 describe('GameDatastore', () => {
 	let datastore: GameDatastore;

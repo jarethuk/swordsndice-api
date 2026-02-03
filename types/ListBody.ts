@@ -1,6 +1,12 @@
 /* istanbul ignore file */
-import {Expose, Type} from 'class-transformer';
-import {IsArray, IsBoolean, IsNumber, IsOptional, IsString,} from 'class-validator';
+import { Expose, Type } from 'class-transformer';
+import {
+	IsArray,
+	IsBoolean,
+	IsNumber,
+	IsOptional,
+	IsString,
+} from 'class-validator';
 
 export class ListMemberEquipment {
 	@Expose()

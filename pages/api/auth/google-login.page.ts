@@ -1,7 +1,7 @@
-import {OAuth2Client} from 'google-auth-library';
-import {APIHelper, ValidationHelpers} from '../../../modules';
-import {Authentication} from '../../../modules/Authentication.ts';
-import {GoogleLoginRequest} from '../../../types/requests/GoogleLoginRequest.ts';
+import { OAuth2Client } from 'google-auth-library';
+import { APIHelper, ValidationHelpers } from '../../../modules';
+import { Authentication } from '../../../modules/Authentication.ts';
+import { GoogleLoginRequest } from '../../../types/requests/GoogleLoginRequest.ts';
 
 const router = APIHelper.getRouter();
 

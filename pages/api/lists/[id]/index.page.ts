@@ -1,9 +1,9 @@
-import {Expose} from 'class-transformer';
-import {IsUUID} from 'class-validator';
-import {ListDatastore} from '../../../../datastores';
-import {APIHelper, ValidationHelpers} from '../../../../modules';
-import {ListBody} from '../../../../types/ListBody.ts';
-import {BasicResponse} from '../../../../types/responses/BasicResponse.ts';
+import { Expose } from 'class-transformer';
+import { IsUUID } from 'class-validator';
+import { ListDatastore } from '../../../../datastores';
+import { APIHelper, ValidationHelpers } from '../../../../modules';
+import { ListBody } from '../../../../types/ListBody.ts';
+import { BasicResponse } from '../../../../types/responses/BasicResponse.ts';
 
 class Query {
 	@IsUUID()

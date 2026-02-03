@@ -1,7 +1,16 @@
-import {Expose, Type} from 'class-transformer';
-import {IsArray, IsBoolean, IsDate, IsInt, IsNumber, IsOptional, IsString, ValidateNested,} from 'class-validator';
-import {ListBody} from '../ListBody.ts';
-import {PublicUser} from './PublicUser.ts';
+import { Expose, Type } from 'class-transformer';
+import {
+	IsArray,
+	IsBoolean,
+	IsDate,
+	IsInt,
+	IsNumber,
+	IsOptional,
+	IsString,
+	ValidateNested,
+} from 'class-validator';
+import { ListBody } from '../ListBody.ts';
+import { PublicUser } from './PublicUser.ts';
 
 export class GameResponseMember {
 	@Expose()
