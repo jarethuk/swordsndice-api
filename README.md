@@ -20,3 +20,32 @@ Start playing at https://swordsndice.com/
 - Jest
 
 Connects to the Expo & web frontend at https://github.com/jarethuk/swordsndice
+
+## Setup
+1. Create .env file
+```
+PORT=3002
+VERCEL_ENV=development
+SESSION_KEY=arandomstring
+POSTGRES_URL_NON_POOLING=postgresql://postgres:postgres@localhost:5432/swordsndice
+POSTGRES_PRISMA_URL=postgresql://postgres:postgres@localhost:5432/swordsndice
+EMAIL_USER=<<from email for login>>
+RESEND=<<resend token>>
+```
+
+2. Install dependencies
+```
+pnpm i
+```
+
+3. Create local databases
+```
+pnpm db:dev
+pnpm db:test
+```
+
+4. Run the dev server
+
+```
+pnpm dev
+```

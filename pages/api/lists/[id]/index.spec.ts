@@ -1,8 +1,8 @@
-import { v4 as uuid } from 'uuid';
-import type { ListEntity, UserEntity } from '../../../../datastores/entities';
-import { TestRecordHelpers } from '../../../../helpers';
-import { NextTestHelper } from '../../../../modules';
-import type { ListBody } from '../../../../types/ListBody.ts';
+import {v4 as uuid} from 'uuid';
+import type {ListEntity, UserEntity} from '../../../../datastores/entities';
+import {TestRecordHelpers} from '../../../../helpers';
+import {NextTestHelper} from '../../../../modules';
+import type {ListBody} from '../../../../types/ListBody.ts';
 import handler from './index.page';
 
 describe('/list/[id]', () => {
@@ -47,7 +47,7 @@ describe('/list/[id]', () => {
 			).rejects.toThrow('List not found');
 		});
 
-		it('Should return a list owned by the user', async () => {
+		it('Should return a list', async () => {
 			const { body } = await test.get({
 				handler,
 				url,
@@ -66,6 +66,7 @@ describe('/list/[id]', () => {
 				description: list.description,
 				image: list.image,
 				isDeleted: list.isDeleted,
+				userId: user.id,
 			});
 		});
 	});

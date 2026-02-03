@@ -1,5 +1,5 @@
-import { WithContext } from '../modules';
-import type { ListEntity } from './entities';
+import {WithContext} from '../modules';
+import type {ListEntity} from './entities';
 
 export interface CreateListProps {
 	name: string;
@@ -29,12 +29,9 @@ export class ListDatastore extends WithContext {
 		});
 	}
 
-	public async getListForUser(
-		userId: string,
-		listId: string,
-	): Promise<ListEntity> {
+	public async getList(listId: string): Promise<ListEntity> {
 		const list = await this.context.database.list.findFirst({
-			where: { userId, id: listId },
+			where: { id: listId },
 		});
 
 		if (!list) {

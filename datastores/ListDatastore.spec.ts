@@ -1,7 +1,7 @@
-import { v4 as uuid } from 'uuid';
-import { TestFramework, TestRecordHelpers } from '../helpers';
-import { type CreateListProps, ListDatastore } from './ListDatastore.ts';
-import type { UserEntity } from './entities';
+import {v4 as uuid} from 'uuid';
+import {TestFramework, TestRecordHelpers} from '../helpers';
+import {type CreateListProps, ListDatastore} from './ListDatastore.ts';
+import type {UserEntity} from './entities';
 
 describe('ListDatastore', () => {
 	let datastore: ListDatastore;
@@ -38,17 +38,17 @@ describe('ListDatastore', () => {
 		});
 	});
 
-	describe('getListForUser', () => {
+	describe('getList', () => {
 		it('Should error if the list is NOT found', async () => {
-			await expect(() =>
-				datastore.getListForUser(user.id, uuid()),
-			).rejects.toThrow('List not found');
+			await expect(() => datastore.getList(uuid())).rejects.toThrow(
+				'List not found',
+			);
 		});
 
-		it('Should return the list for the user', async () => {
+		it('Should return the list', async () => {
 			const list = await testRecords.createList(user.id);
 
-			const result = await datastore.getListForUser(user.id, list.id);
+			const result = await datastore.getList(list.id);
 			expect(result).toEqual(list);
 		});
 	});
