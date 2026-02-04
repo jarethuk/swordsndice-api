@@ -28,6 +28,7 @@ model User {
   invitesSent   GroupInvite[] @relation("invitesSent")
   gameInvites   GameInvite[]  @relation("gameInvite")
   gameInvitees  GameInvite[]  @relation("gameInvitee")
+  feedback      Feedback[]    @relation("feedback")
   description   String?
 }
 
@@ -146,4 +147,14 @@ model GroupInvite {
   group           Group    @relation(fields: [groupId], references: [id], onDelete: Cascade)
   userId          String   @db.Uuid
   user            User     @relation(fields: [userId], references: [id], onDelete: Cascade, name: "invites")
+}
+
+model Feedback {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  createdByUserId String   @db.Uuid
+  createdBy       User     @relation(fields: [createdByUserId], references: [id], onDelete: Cascade, name: "feedback")
+  rating          Int?
+  message         String?
 }
